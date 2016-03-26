@@ -2,9 +2,9 @@ package org.cc.problem.chess
 
 // Define a generic solution encoder
 case class Encoder[T,U](empty: () => U,
-      					        encode: Set[(Piece,Position)] => T,
-      					        add: (U,T) => U,
-      					        combine: (U,U) => U)
+                        encode: Set[(Piece,Position)] => T,
+                        add: (U,T) => U,
+                        combine: (U,U) => U)
 
 object Encoder {
   
