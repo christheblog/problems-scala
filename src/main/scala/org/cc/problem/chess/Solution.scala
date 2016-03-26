@@ -18,8 +18,8 @@ object Solution {
   
   // Generic encoding function
   def encode[T,U](solution: Solution, 
-		  		  convert: (Piece,Position) => T,
-		  		  pack: Set[T] => U = identity[Set[T]]_): U = 
+                  convert: (Piece,Position) => T,
+                  pack: Set[T] => U = identity[Set[T]]_): U = 
 	  pack(solution.map(pp => convert(pp._1,pp._2)))
 
   // Put a solution into a String, relative to a board  		  

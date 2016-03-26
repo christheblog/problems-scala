@@ -6,8 +6,8 @@ object Solver {
   import Solution._
   
   def solve[T,U](board: Board, pieces: List[Piece])
-  	   (implicit encoder: Encoder[T,U] = Encoder.DefaultEncoder,
-		  	         moves: (Board,Piece,Position) => Set[Position] = Board.moves): U = {
+       (implicit encoder: Encoder[T,U] = Encoder.DefaultEncoder,
+                 moves: (Board,Piece,Position) => Set[Position] = Board.moves): U = {
     import encoder._
     def loop(on: Set[(Piece,Position)], remaining: List[Piece], res: U): U = (on,remaining) match {
       case (on,Nil) => 

@@ -12,14 +12,14 @@ object Game {
   
   // Solve - no encoding
   def solveNoEncoder(board: Board, 
-		  			         pieces: List[Piece],
-		  			         moves: (Board,Piece,Position) => Set[Position] = Board.moves): Set[Solution] =
+                     pieces: List[Piece],
+                     moves: (Board,Piece,Position) => Set[Position] = Board.moves): Set[Solution] =
     solve[Solution,Solutions](board,pieces)(Encoder.DefaultEncoder,moves)
   
   // Solve using a String encoder - better perfs for big number of solutions
   def solveStringEncoder(board: Board, 
-		  				           pieces: List[Piece],
-		  				           moves: (Board,Piece,Position) => Set[Position] = Board.moves): Set[String] =
+                         pieces: List[Piece],
+                         moves: (Board,Piece,Position) => Set[Position] = Board.moves): Set[String] =
     solve[String,Set[String]](board,pieces)(Encoder.StringEncoder ,moves)
 
   // Solve the n-queen problem
